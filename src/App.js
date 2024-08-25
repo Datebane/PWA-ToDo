@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import HabitForm from "./components/HabitForm.js";
+import HabitList from "./components/HabitList.js";
+import { useLocalStorage } from "./hooks/useLocalStorage.js";
+import { requestNotificationPermission } from "./services/notificationService.js";
+import "./App.css";
 
-function App() {
+let nextId = 0;
+
+const App = () => {
+  const [habits, setHabits] = useLocalStorage("habits", []);
+
+  const addHabit = (name) => {
+    const newHabit = {
+      id: nextId++,
+      name,
+      completed: false,
+    };
+    setHabits([...habits, newHabit]);
+  };
+
+  const toggleHabit = (id) => {
+    const newHabits = habits.map((habit) =>
+      habit.id === id ? { ...habit, completed: !habit.completed } : habit
+    );
+    setHabits(newHabits);
+  };
+
+  // useEffect(() => {
+  //   requestNotificationPermission();
+  // }, []);
+
+  const deleteHabit = (id) => {
+    const newHabits = habits.filter((habit) => habit.id !== id);
+    setHabits(newHabits);
+  };
+
+  const editHabit = (id, newName) => {
+    const newHabits = habits.map((habit) =>
+      habit.id === id ? { ...habit, name: newName } : habit
+    );
+    setHabits(newHabits);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="wrapper">
+        <h1>Habit Tracker</h1>
+        <HabitForm addHabit={addHabit} />
+        <HabitList
+          habits={habits}
+          toggleHabit={toggleHabit}
+          deleteHabit={deleteHabit}
+          editHabit={editHabit}
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
