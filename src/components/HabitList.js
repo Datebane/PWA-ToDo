@@ -3,7 +3,7 @@ import HabitItem from './HabitItem';
 
 const HabitList = ({ habits, toggleHabit, deleteHabit, editHabit }) => {
   return (
-    <ul>
+    <div className="habit-list-wrapper">
       {habits.map((habit) => (
         <HabitItem 
           key={habit.id} 
@@ -13,7 +13,7 @@ const HabitList = ({ habits, toggleHabit, deleteHabit, editHabit }) => {
           editHabit={editHabit}
         />
       ))}
-    </ul>
+    </div>
   );
 };
 

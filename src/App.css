@@ -6,8 +6,62 @@
 .wrapper {
   border: 2px solid whitesmoke;
   border-radius: 5px;
-  width: 60%;
+  width: 55%;
   flex-direction: column;
   display: flex;
   align-items: center;
+}
+
+.habit-title {
+  font-size: 36px;
+}
+/* Media requests */
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 70%;
+  }
+
+  .habit-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 75%;
+  }
+
+  .habit-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    width: 75%;
+  }
+
+  .habit-title {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 425px) {
+  .wrapper {
+    width: 75%;
+  }
+
+  .habit-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper {
+    width: 80%;
+  }
+
+  .habit-title {
+    font-size: 15px;
+  }
 }

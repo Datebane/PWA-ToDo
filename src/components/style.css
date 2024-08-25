@@ -1,0 +1,262 @@
+/* HabitItem */
+.habit-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 650px;
+  word-wrap: break-word;
+}
+
+.habit-item span {
+  flex-grow: 1;
+  margin-right: 10px;
+  word-break: break-word;
+}
+
+.habit-text {
+  flex-grow: 1;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.habit-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.habit-buttons svg {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.habit-input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* HabitForm */
+.habit-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.habit-form input[type="text"] {
+  width: 535px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.habit-form input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.habit-form button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.habit-form button:hover {
+  background-color: #0056b3;
+}
+/* HabitList */
+.habit-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Media requests */
+@media (max-width: 1024px) {
+  /* HabitForm */
+  .habit-form {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .habit-form input[type="text"] {
+    width: 450px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .habit-form button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* HabitItem */
+  .habit-item {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 565px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* HabitForm */
+  .habit-form {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .habit-form input[type="text"] {
+    width: 300px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .habit-form button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* HabitItem */
+  .habit-item {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 415px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* HabitForm */
+  .habit-form {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .habit-form input[type="text"] {
+    width: 250px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .habit-form button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* HabitItem */
+  .habit-item {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 355px;
+  }
+
+  .habit-buttons svg {
+    cursor: pointer;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 425px) {
+  /* HabitForm */
+  .habit-form {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .habit-form input[type="text"] {
+    width: 150px;
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .habit-form button {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+
+  /* HabitItem */
+  .habit-item {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 245px;
+  }
+
+  .habit-buttons svg {
+    cursor: pointer;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 375px) {
+  /* HabitForm */
+  .habit-form {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .habit-form input[type="text"] {
+    width: 130px;
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .habit-form button {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+
+  /* HabitItem */
+  .habit-item {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 225px;
+  }
+
+  .habit-buttons svg {
+    cursor: pointer;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  /* HabitForm */
+  .habit-form {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .habit-form input[type="text"] {
+    width: 100px;
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .habit-form button {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+
+  /* HabitItem */
+  .habit-item {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 195px;
+  }
+
+  .habit-buttons svg {
+    cursor: pointer;
+    font-size: 13px;
+  }
+}

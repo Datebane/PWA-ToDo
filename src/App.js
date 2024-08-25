@@ -45,7 +45,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="wrapper">
-        <h1>Habit Tracker</h1>
+        <h1 className="habit-title">Habit Tracker</h1>
         <HabitForm addHabit={addHabit} />
         <HabitList
           habits={habits}

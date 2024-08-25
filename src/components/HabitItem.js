@@ -3,6 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
 import { FaSave } from "react-icons/fa";
 import { MdCancelPresentation } from "react-icons/md";
+import "./style.css";
 
 const HabitItem = ({ habit, toggleHabit, deleteHabit, editHabit }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -16,20 +17,24 @@ const HabitItem = ({ habit, toggleHabit, deleteHabit, editHabit }) => {
   };
 
   return (
-    <li>
+    <div className="habit-item">
       {isEditing ? (
         <>
           <input
             type="text"
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
+            className="habit-input"
           />
-          <div ><FaSave onClick={handleEdit}/></div>
-          <div ><MdCancelPresentation onClick={() => setIsEditing(false)}/></div>
+          <div className="habit-buttons">
+            <FaSave onClick={handleEdit} />
+            <MdCancelPresentation onClick={() => setIsEditing(false)} />
+          </div>
         </>
       ) : (
         <>
           <span
+            className="habit-text"
             style={{
               textDecoration: habit.completed ? "line-through" : "none",
             }}
@@ -37,15 +42,13 @@ const HabitItem = ({ habit, toggleHabit, deleteHabit, editHabit }) => {
           >
             {habit.name}
           </span>
-          <div>
+          <div className="habit-buttons">
             <FaPen onClick={() => setIsEditing(true)} />
-          </div>
-          <div>
             <MdDelete onClick={() => deleteHabit(habit.id)} />
           </div>
         </>
       )}
-    </li>
+    </div>
   );
 };
 
